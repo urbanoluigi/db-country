@@ -1,0 +1,15 @@
+-- 1. Selezionare tutte le nazioni il cui nome inizia con la P e la cui area è maggiore di 1000 kmq
+select *
+from countries c
+where name  like 'p%' and area > 1000;
+
+-- 2. Contare quante nazioni sono presenti nel database
+select count(*)
+from countries c 
+
+-- 3. Selezionare il nome delle regioni del continente europeo, in ordine alfabetico
+select r.name 
+from regions r 
+join continents c on r.continent_id 
+where c.name = 'europe'
+order by r.name asc ; 
